@@ -39,14 +39,17 @@ const productSchema = new mongoose.Schema({
 
     },
 
+    seller:{
+        type:mongoose.Scheema.Types.ObjectId,ref:"users",
+        required:true
+    },
+
     date :{
-        type : Date
+        type : Date,
+        default:date.now,
     }
-
-
    
+});
 
-})
-
-export const productModel = mongoose.Model("products", productSchema)
+export const productModel = mongoose.model("products", productSchema)
 

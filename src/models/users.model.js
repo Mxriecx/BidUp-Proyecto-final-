@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
 
     username: {
         type: String,
-        Required: true
+        required: true
     },
 
     nickname: {
@@ -49,11 +49,12 @@ const userSchema = new mongoose.Schema({
     },
 
     biography: {
-        "job": "string",
-        "fun fact": "string",
-        "hobbie": "string",        
-         required: false
-    }
+        
+        job: {type: String},
+        funFact :{type : String},
+        hobbie: {type:String}  
+                
+    },
 
 
 

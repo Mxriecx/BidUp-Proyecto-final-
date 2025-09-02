@@ -3,17 +3,21 @@ import mongoose from "mongoose";
 const reviewSchema = new mongoose.Schema({
 
     user :{
-        type : String
+        type : mongoose.Schema,Types,ObjectId,ref:"users",
+        required: true
     },
 
     score : {
         type : Number,
-        required : true
+        required : true,
+        min:1,
+        max:5
     },
 
     comments : {
         type : String,
-        required: true
+        required: true,
+        maxlenght:500
     },
 })
 

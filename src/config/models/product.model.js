@@ -4,42 +4,49 @@ import mongoose from "mongoose";
 //construir la plantilla del modelo
 
 const productSchema = new mongoose.Schema({
-    image:{
-        type:String,
-        required:true
+    image: {
+        type: String,
+        required: true
     },
-    title:{
-        type:String,
-        required:true
+    title: {
+        type: String,
+        required: true
     },
-    description:{
-        type:String,
-        
-    },
-
-    price:{
-        type:Number,
-        required:true
-    },
-
-    categories:{
-        type:String,
-        enum :["Tech","clothes","shoes"]
+    description: {
+        type: String,
+        required: true
 
     },
 
-    isAvailable :{
-        type:Boolean,
+    initialPrice: {
+        type: Number,
+        required: true
+    },
+
+    finalPrice: {
+        type: Number
+    },
+
+    state: {
+        type: String,
+        enum: ["Por Subastar", "en subasta", "vendido"]
 
     },
 
-    date:{
-        type: Date,
-        default : date.now
+     Categories: {
+        type: String,
+        enum: ["tecnologia", "ropa y accesorios", "hogar","electrodomesticos","deportes"]
+
     },
 
+    date :{
+        type : Date
+    }
+
+
+   
 
 })
 
-export const productModel = mongoose.Model("products",productSchema)
+export const productModel = mongoose.Model("products", productSchema)
 

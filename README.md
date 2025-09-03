@@ -4,7 +4,7 @@ Bid Up es la API backend de una aplicación de subastas, desarrollada como proye
 
 ✨ Funcionalidades
 
-👤 Usuarios: registro, login y autenticación con JWT.
+👤 Usuarios: registro, login y autenticación
 
 🛍️ Productos: creación y gestión de subastas (precio inicial, tiempo de cierre).
 

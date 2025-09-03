@@ -1,39 +1,52 @@
-🏷️ Bid Up - Backend
+Bid Up
+📖 Descripción General
 
-Bid Up es la API backend de una aplicación de subastas, desarrollada como proyecto final de bootcamp. Permite gestionar usuarios, productos y ofertas, con datos almacenados en MongoDB.
+Bid Up es una aplicación backend desarrollada como proyecto final de bootcamp.
+Su objetivo principal es gestionar un sistema de subastas en línea, donde los usuarios pueden:
 
-✨ Funcionalidades
+Crear subastas.
 
-👤 Usuarios: registro, login y autenticación
+Realizar ofertas sobre productos disponibles.
 
-🛍️ Productos: creación y gestión de subastas (precio inicial, tiempo de cierre).
+Consultar detalles de cada subasta.
 
-💸 Ofertas: los usuarios pueden hacer ofertas en productos activos.
+Obtener el historial de ofertas realizadas.
 
-📜 Historial: registro de subastas y ofertas realizadas.
-
-🛠️ Tecnologías utilizadas
-
-Node.js
-
-Express
-
-MongoDB + Mongoose
-
-📖 Aprendizajes
-
-Este backend nos permitió:
-
-Conectar y modelar datos con MongoDB y Mongoose.
-
-
-
-Aplicar buenas prácticas de organización en un proyecto backend.
+El proyecto está construido con Node.js, Express y MongoDB para asegurar un manejo eficiente de datos y escalabilidad.
 
 👩‍💻 Autores
 
-Maria Camila Paz
+María Camila Paz – Desarrollo Backend y manejo de base de datos.
 
-Fabian Noguera
+Fabián Noguera – Desarrollo Backend y arquitectura del servidor.
 
-Isabella Niño
+Isabella Niño – Desarrollo Backend y documentación.
+
+🛠️ Requisitos Previos
+
+Antes de ejecutar el proyecto, asegúrate de tener instaladas las siguientes dependencias y herramientas:
+
+Node.js
+ v16 o superior
+
+MongoDB
+
+npm
+ o yarn
+
+Dependencias principales utilizadas:
+
+Express (framework para el servidor)
+
+Mongoose (ODM para MongoDB)
+
+Dotenv (manejo de variables de entorno)
+
+Nodemon (para desarrollo)
+
+
+
+🚧 Estado del Proyecto
+
+🔹 En desarrollo – Actualmente se cuenta con el backend funcional y conexión a la base de datos. Futuras mejoras incluirán autenticación de usuarios, frontend y despliegue en la nube.
+

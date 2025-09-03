@@ -17,7 +17,7 @@ const bidSchema = new mongoose.Schema({
 
   amount: {
     type: Number,
-    required: true,
+    required: true
   },
   date: {
     type: Date,
@@ -25,4 +25,4 @@ const bidSchema = new mongoose.Schema({
   }
 });
 
-export const bidModel = mongoose.model{"bids",bi}
+export const bidModel = mongoose.model("bids",bidSchema);

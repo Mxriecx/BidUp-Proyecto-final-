@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
 
     image: {
         type: String,
-        required: true
+       
     },
     name: {
         type: String,
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
 
     email: {
         type: String,
-        required: true
+        
     },
 
     username: {
@@ -54,7 +54,7 @@ const userSchema = new mongoose.Schema({
         funFact :{type : String},
         hobbie: {type:String}  
                 
-    },
+    }
 
 
 

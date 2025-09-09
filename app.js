@@ -3,6 +3,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { dbConnect } from "./src/config/database.js";
+import { reviewRouter } from "./src/routes/reviews.routes.js";
 
 const app = express();
 dotenv.config();
@@ -12,6 +13,9 @@ dbConnect()
 app.get("/",(req,res)=>
 res.send("Server is Working!")
 )
+
+app.use(express.json());
+app.use("/reviews", reviewRouter)
 
 
 app.listen(port,()=>{

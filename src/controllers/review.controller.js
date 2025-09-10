@@ -17,7 +17,8 @@ import { review } from "../models/reviews.model.js";
     }
 }
 
- export const getReview = async (req,res) => {       try {
+ export const getReview = async (req,res) => {       
+    try {
          const allReviews = await review.find();
 
          return res.status(200).json({

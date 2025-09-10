@@ -3,6 +3,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { dbConnect } from "./src/config/database.js";
+import { reviewRouter } from "./src/routes/reviews.routes.js";
 import { userRouter } from "./src/routes/users.routes.js";
 import { bidRouter } from "./src/routes/bidders.routes.js";
 const app = express();
@@ -15,6 +16,7 @@ res.send("Server is Working!")
 )
 
 app.use(express.json());
+app.use("/reviews", reviewRouter)
 app.use("/users",userRouter);
 app.use("/bids",bidRouter);
 

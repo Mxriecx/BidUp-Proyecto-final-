@@ -1,3 +1,5 @@
+
+import mongoose from "mongoose";
 const bidSchema = new mongoose.Schema({
 
 
@@ -14,11 +16,11 @@ const bidSchema = new mongoose.Schema({
     required: true
   },
 
-
   amount: {
     type: Number,
     required: true
   },
+  
   date: {
     type: Date,
     default: Date.now

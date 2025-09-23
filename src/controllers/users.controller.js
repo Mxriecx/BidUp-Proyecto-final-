@@ -15,7 +15,12 @@ export const postUser = async (request,response) => {
             age,
             username,
             password:codedPassword,
-            role
+            email,
+            role,
+            nickname,
+            tenure,
+            image
+
         });
 
         return response.status(201).json({

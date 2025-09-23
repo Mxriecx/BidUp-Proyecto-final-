@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
 
     image: {
         type: String,
-       
+
     },
     name: {
         type: String,
@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
 
     email: {
         type: String,
-        
+        required: true
+
     },
 
     username: {
@@ -49,11 +50,11 @@ const userSchema = new mongoose.Schema({
     },
 
     biography: {
-        
-        job: {type: String},
-        funFact :{type : String},
-        hobbie: {type:String}  
-                
+
+        job: { type: String },
+        funFact: { type: String },
+        hobbie: { type: String }
+
     }
 
 

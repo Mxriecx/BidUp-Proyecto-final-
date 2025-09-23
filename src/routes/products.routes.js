@@ -7,13 +7,13 @@ import { auth }  from "../middleware/auth.js"
 export const productRouter = express.Router();
 
 // Ruta para el POST
-productRouter.post("/crear",auth("admin") ,upload.single("image"), postProduct);
+productRouter.post("/crear",upload.single("image"), postProduct);
 
 // Ruta para el GET
 productRouter.get("/mostrar", getAllProducts);
 
 // Ruta para el PUT
-productRouter.put("/actualizar/:id", auth("admin"), putProductById);
+productRouter.put("/actualizar/:id",putProductById);
 
 // Ruta para el DELETE
-productRouter.delete("/eliminar/:id", auth("admin"), deleteProductById);
+productRouter.delete("/eliminar/:id",  deleteProductById);

@@ -1,33 +1,43 @@
-import { productModel} from "../models/product.model.js"
+import { productModel } from "../models/product.model.js"
 
 // 1. Método para CREAR un producto -> POST
 export const postProduct = async (request, response) => {
+    try {
 
-    try{
-        await productModel.create(request.body);
+        if (!request.file) {
+            return response.status(400).json({
+                "mensaje": "Debes subir un archivo de imagen"
+            })
+        }
 
-        return response.status(201).json({
-            "mensaje": "Producto creado correctamente"
-        });
+        const newProduct = {
+            ...request.body,
+            image: `/uploads/${request.file.filename}`
+        }
 
-    }catch (error){
+        await productModel.create(newProduct);
+
+        return response.status(201).json({ "mensaje": "producto creado correctamente" });
+
+    } catch (error) {
         return response.status(400).json({
-            "mensaje": "Ocurrió un error al crear el producto",
+            "mensaje": "ocurrio un error",
             "error": error.message || error
         })
     }
+
 }
 
 // 2. Método para MOSTRAR todos los productos -> GET
 export const getAllProducts = async (request, response) => {
     try {
         const allProducts = await productModel.find();
-        
+
         return response.status(200).json({
             "mensaje": "Petición exitosa",
-            "data": allProducts 
+            "data": allProducts
         });
-        
+
     } catch (error) {
         return response.status(500).json({
             "mensaje": "Ocurrió un error al mostrar los productos",
@@ -43,13 +53,13 @@ export const putProductById = async (request, response) => {
         const dataForUpdate = request.body;
 
         await productModel.findByIdAndUpdate(idForUpdate, dataForUpdate);
-        
+
         return response.status(200).json({
             "mensaje": "Producto actualizado exitosamente"
         });
 
     } catch (error) {
-         return response.status(500).json({
+        return response.status(500).json({
             "mensaje": "Ocurrió un error al actualizar el producto",
             "error": error.message || error
         })
@@ -61,13 +71,13 @@ export const deleteProductById = async (request, response) => {
     try {
         const idForDelete = request.params.id;
         await productModel.findByIdAndDelete(idForDelete);
-        
+
         return response.status(200).json({
             "mensaje": "Producto eliminado exitosamente"
         });
-        
+
     } catch (error) {
-         return response.status(500).json({
+        return response.status(500).json({
             "mensaje": "Ocurrió un error al eliminar el producto",
             "error": error.message || error
         })

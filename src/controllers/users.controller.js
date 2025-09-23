@@ -15,7 +15,12 @@ export const postUser = async (request,response) => {
             age,
             username,
             password:codedPassword,
-            role
+            email,
+            role,
+            nickname,
+            tenure,
+            image
+
         });
 
         return response.status(201).json({
@@ -60,6 +65,10 @@ export const putUserById = async (request,response) => {
 
         const idForUserUpdate = request.params._id;
         const dataForUserUpdate = request.body;
+
+         if (dataForUserUpdate.password) {
+            dataForUserUpdate.password = await bcryptjs.hash(dataForUserUpdate.password,8);
+        }
 
         await userModel.findByIdAndUpdate (idForUserUpdate,dataForUserUpdate);
         return response.status(200).json({

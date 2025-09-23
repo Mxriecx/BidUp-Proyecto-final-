@@ -1,49 +1,67 @@
-Bid Up
+🚀 Bid Up
+
+
+
+
+
+
+
+
+
+
 📖 Descripción General
 
 Bid Up es una aplicación backend desarrollada como proyecto final de bootcamp.
 Su objetivo principal es gestionar un sistema de subastas en línea, donde los usuarios pueden:
 
-Crear subastas.
+📝 Crear subastas.
 
-Realizar ofertas sobre productos disponibles.
+💰 Realizar ofertas sobre productos disponibles.
 
-Consultar detalles de cada subasta.
+🔎 Consultar detalles de cada subasta.
 
-Obtener el historial de ofertas realizadas.
+📜 Obtener el historial de ofertas realizadas.
 
 El proyecto está construido con Node.js, Express y MongoDB para asegurar un manejo eficiente de datos y escalabilidad.
+Además, cuenta con autenticación mediante JWT y manejo de archivos con Multer.
 
 👩‍💻 Autores
 
 María Camila Paz – Desarrollo Backend y manejo de base de datos.
 
-Fabián Noguera – Desarrollo Backend y arquitectura del servidor.
+Fabián Noguera – Desarrollo Backend y documentación
 
-Isabella Niño – Desarrollo Backend y documentación.
+Isabella Niño – Desarrollo Backend y arquitectura del servidor.
 
 🛠️ Requisitos Previos
 
-Antes de ejecutar el proyecto, asegúrate de tener instaladas las siguientes dependencias y herramientas:
+Antes de ejecutar el proyecto, asegúrate de tener instalados:
 
-Node.js
- v16 o superior
+Node.js v16 o superior
 
 MongoDB
 
-npm
- o yarn
+npm o yarn
 
-Dependencias principales utilizadas:
+📦 Dependencias principales
 
-Express (framework para el servidor)
+Express
+ – Framework para el servidor
 
-Mongoose (ODM para MongoDB)
+Mongoose
+ – ODM para MongoDB
 
-Dotenv (manejo de variables de entorno)
+Dotenv
+ – Manejo de variables de entorno
 
-Nodemon (para desarrollo)
+Nodemon
+ – Desarrollo en caliente
 
+jsonwebtoken
+ – Autenticación con JWT
+
+Multer
+ – Subida de archivos
 
 
 🚧 Estado del Proyecto

@@ -33,15 +33,16 @@ const productSchema = new mongoose.Schema({
 
     },
 
-     categories: {
+     category: {
         type: String,
-        enum: ["tecnologia", "ropa y accesorios", "hogar","electrodomesticos","deportes"]
+        enum: ["Tecnologia", "Arte", "Hogar","Electrodomesticos"],
+        required :true
 
     },
 
     seller:{
         type:mongoose.Schema.Types.ObjectId,ref:"users",
-        required: true
+        required :true
     },
 
     date :{

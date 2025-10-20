@@ -23,8 +23,8 @@ export const getBidder = async (request, response) => {
 
     try {
         const allBidders = await bidModel.find()
-        .populate("users", "name email")   
-        .populate("products", "title price image"); 
+        .populate("bidder", "name email")   
+        .populate("product", "title price image"); 
 
         return response.status(200).json({
             "mensaje": "se encontraron todas las apuestas",

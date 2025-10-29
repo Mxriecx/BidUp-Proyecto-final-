@@ -7,7 +7,8 @@ import { auth } from "../middleware/auth.js"
 export const userRouter = express.Router();
 
 //3. ruta para el post 
-userRouter.post("/crear", postUser);
+userRouter.post("/crear", upload.single("image"), postUser);
+
 
 // ruta para el get
 userRouter.get("/mostrar", auth("admin"), getUser);

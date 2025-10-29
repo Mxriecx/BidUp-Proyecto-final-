@@ -9,7 +9,7 @@ export const postUser = async (request,response) => {
         const {name,age,username,password,role,email,nickname,tenure,image}=request.body;
 
         const codedPassword = await bcryptjs.hash(password,8);
-
+         
         await userModel.create({
             name,
             age,

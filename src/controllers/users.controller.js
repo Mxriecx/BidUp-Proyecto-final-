@@ -63,7 +63,7 @@ export const getUser = async (request,response) => {
 export const putUserById = async (request,response) => {
     try{
 
-        const idForUserUpdate = request.params._id;
+        const idForUserUpdate = request.params.id;
         const dataForUserUpdate = request.body;
 
          if (dataForUserUpdate.password) {

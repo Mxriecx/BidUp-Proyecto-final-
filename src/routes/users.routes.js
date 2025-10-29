@@ -13,7 +13,7 @@ userRouter.post("/crear", postUser);
 userRouter.get("/mostrar", auth("admin"), getUser);
 
 //ruta para el put
-userRouter.put("/actualizar/:_id", putUserById);
+userRouter.put("/:id", putUserById);
 
 //ruta para el delete
 userRouter.delete("/borrar/:_id", deleteUserById);

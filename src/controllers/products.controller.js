@@ -46,6 +46,27 @@ export const getAllProducts = async (request, response) => {
     }
 }
 
+export const getProductByCategorie = async (request,response) => {
+    try {
+
+        const category = request.params;
+
+        const productCategory = await productModel.find({category});
+
+        return response.status(200).json({
+            "mensaje" : "Todas las categorias encontradas",
+            "data" : productCategory
+        })
+        
+    } catch (error) {
+        return response.status(500).json({
+            "mensaje": "Ocurrió un error al buscar las categorias",
+            "error": error.message || error
+    })
+}
+}
+
+
 // 3. Método para ACTUALIZAR un producto -> PUT
 export const putProductById = async (request, response) => {
     try {

@@ -23,6 +23,7 @@ export const auth = (requiredRole) => {
         try {
 
             const decode = await verifyToken(allowedToken);
+            request.user = decode;
             console.log("informacion decodificada del token :", decode);
 
             // verificar el role si es de administrador o no

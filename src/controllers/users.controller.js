@@ -3,6 +3,10 @@ import bcryptjs from "bcryptjs";
 
 export const postUser = async (request, response) => {
   try {
+
+      console.log("🟢 LLEGA AL BACKEND /crear");
+    console.log("🗂 req.file:", request.file);
+    console.log("🧠 req.body:", request.body);
     // deestructuracion se hace para procesar la informacion del usuario antes de guardarla
     if (!request.file) {
       return response.status(400).json({

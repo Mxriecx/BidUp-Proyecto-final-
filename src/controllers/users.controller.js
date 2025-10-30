@@ -9,6 +9,7 @@ export const postUser = async (request, response) => {
         mensaje: "Debes subir un archivo de imagen",
       });
     }
+    console.log("Password recibido:", request.body.password);
     const codedPassword = await bcryptjs.hash(request.body.password, 8);
 
     const newUser = {

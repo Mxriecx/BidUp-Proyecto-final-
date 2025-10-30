@@ -6,6 +6,7 @@ import bcryptjs from "bcryptjs";
 
 export const login = async (request, response) => {
     try {
+         
         const { emaillogin , passwordlogin } = request.body;
 
         const userFound = await userModel.findOne({
@@ -22,7 +23,7 @@ export const login = async (request, response) => {
 
         // validacion 2 : contraseña correcta
 
-        const validPassword = await bcryptjs.compare(passwordlogin, userFound.password);
+        const validPassword = await bcryptjs.compare(passwordlogin.trim(), userFound.password);
 
         if (!validPassword) {
             return response.status(401).json({

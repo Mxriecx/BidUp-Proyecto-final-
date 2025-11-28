@@ -19,9 +19,7 @@ const _filename = fileURLToPath(import.meta.url);// identifica el archivo en el 
 const _dirname = path.dirname(_filename); // identifica la carpeta en la que estamos
 
 
-app.get("/",(req,res)=>
-res.send("Server is Working!")
-)
+//app.get("/",(req,res)=>res.send("Server is Working!"))
 
 app.use(cors()); //habilita CORS
 app.use(express.json());
@@ -32,6 +30,12 @@ app.use("/bids",bidRouter);
 app.use("/login",loginRouter);
 app.use("/uploads", express.static(path.join(_dirname, "src/uploads")));
 
+//servir el frontend
+app.use(express.static(path.join(_dirname, "dist", "frontend", "browser")));
+
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(_dirname, "dist", "frontend", "browser", "index.html"));
+});
 
 app.listen(port,()=>{
     console.log(`Server is being executed on http://localhost:${port}`)
